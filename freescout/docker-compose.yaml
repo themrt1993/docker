@@ -24,7 +24,7 @@ services:
       - DISPLAY_ERRORS=FALSE
       # - TIMEZONE=Europe/Berlin
     ports:
-      - 5010:80
+      - 80:80
 
   freescout-db:
     image: tiredofit/mariadb:10.11
