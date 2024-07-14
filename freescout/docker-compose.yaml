@@ -43,7 +43,7 @@ services:
       - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASSWORD}
       - ZABBIX_HOSTNAME=freescout-db
-      
-      networks:
-        traefik_web:
-          external: true
+
+networks:
+  traefik_web:
+    external: true
