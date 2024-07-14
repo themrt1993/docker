@@ -3,7 +3,7 @@ services:
     image: nginx:1.20
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nginx.rule=Host(`app2.germanywestcentral.cloudapp.azure.com`)"
+      - "traefik.http.routers.nginx.rule=Host(`linux.tvoelkner.de`)"
     networks:
       - traefik_web
 
