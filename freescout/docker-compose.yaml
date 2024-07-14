@@ -23,8 +23,11 @@ services:
       - ENABLE_SSL_PROXY=TRUE
       - DISPLAY_ERRORS=FALSE
       # - TIMEZONE=Europe/Berlin
-    ports:
-      - 80:80
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nginx.rule=Host(`dev.tvoelkner.de`)"
+    networks:
+      - traefik_web
 
   freescout-db:
     image: tiredofit/mariadb:10.11
@@ -40,3 +43,7 @@ services:
       - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASSWORD}
       - ZABBIX_HOSTNAME=freescout-db
+      
+      networks:
+        traefik_web:
+          external: true
