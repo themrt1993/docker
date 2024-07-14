@@ -33,7 +33,7 @@ services:
       - "traefik.http.services.freescout.loadbalancer.server.port=80"
     networks:
       - traefik_web
-      - default
+
 
   freescout-db:
     image: tiredofit/mariadb:10.11
@@ -51,7 +51,5 @@ services:
       - ZABBIX_HOSTNAME=freescout-db
 
 networks:
-  traefik_proxy:
+  traefik_web:
     external: true
-  default:
-    driver: bridge
