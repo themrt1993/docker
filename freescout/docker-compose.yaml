@@ -30,7 +30,6 @@ services:
       - "traefik.http.routers.freescout.tls=true"
       - "traefik.http.routers.freescout.tls.certresolver=default"
       - "traefik.http.routers.freescout.middlewares=default@file"
-      - "traefik.http.services.freescout.loadbalancer.server.port=80"
     networks:
       - traefik_web
 
