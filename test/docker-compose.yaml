@@ -3,7 +3,7 @@ services:
     image: php:8.1-apache
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.apache.rule=Host(`php.dev.tvoelkner.de`) && PathPrefix(`/test`)""
+      - "traefik.http.routers.apache.rule=Host(`php.dev.tvoelkner.de`) && PathPrefix(`/test`)"
       - "traefik.http.middlewares.strip-testpath.stripprefix.prefixes=/test"
       - "traefik.http.routers.apache.middlewares=strip-testpath@docker"
     networks:
