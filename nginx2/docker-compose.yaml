@@ -1,0 +1,12 @@
+services:
+  nginx:
+    image: nginx:1.20
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nginx.rule=Host(`nginx.docker.tvoelkner.de`)"
+    networks:
+      - traefik_web
+
+networks:
+  traefik_web:
+    external: true
