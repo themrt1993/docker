@@ -3,7 +3,7 @@ services:
     image: php:8.1-apache
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.apache.rule=Host(`php.dev.tvoelkner.de`)"
+      - "traefik.http.routers.apache.rule=Host(`php.docker.tvoelkner.de`)"
     networks:
       - traefik_web
     volumes:
